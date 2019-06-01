@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  z-wave-me:
+    image: zwave-me-salon
+    container_name: zwave-me-salon
+    network_mode: "bridge"
+    ports:
+      - "9901:9901"
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
